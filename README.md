@@ -1,0 +1,1 @@
+The printf function is a standard input/output function in the C programming language, and it's used for formatted output. It is part of the standard I/O library (stdio.h) in C. The purpose of printf is to produce formatted output to the standard output stream, usually the console.
