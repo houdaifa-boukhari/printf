@@ -24,7 +24,7 @@ int ft_format(va_list args, const char format)
 	else if (format == 'S')
 		return (ft_putSstr(va_arg(args, char *)));
 	else if (format == 'p')
-		return (ft_putadress(va_arg(args, char *)));
+		return (ft_putadress(va_arg(args, void *)));
 	else if (format == 'x')
 		return (ft_putnbr_hexa('x', va_arg(args, unsigned long)));
 	else if (format == 'X')
