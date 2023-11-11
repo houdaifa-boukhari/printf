@@ -12,19 +12,13 @@ int	ft_putnbr_hexa(char format, unsigned long nb)
 {
 	char	*base;
 	char	*base1;
-	long n = nb;
 	int i = 1;
 
 	base = "0123456789ABCDEF";
 	base1 = "0123456789abcdef";
-	while (n >= 16)
-	{
-		n /= 16;
-		i++;
-	}
 	if (nb >= 16)
 	{
-		ft_putnbr_hexa(format, nb / 16);
+		i += ft_putnbr_hexa(format, nb / 16);
 		ft_putnbr_hexa(format, nb % 16);
 	}
 	else
