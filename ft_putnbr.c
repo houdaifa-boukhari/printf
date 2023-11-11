@@ -11,7 +11,7 @@ int	ft_putnbr(long nb)
 {
 	char digite;
 	int i;
-	
+
 	i = 1;
 	if (nb < 0)
 	{
@@ -20,7 +20,7 @@ int	ft_putnbr(long nb)
 	}
 	if (nb >= 10)
 	{
-		i +=ft_putnbr(nb / 10);
+		i += ft_putnbr(nb / 10);
 		ft_putnbr(nb % 10);
 	}
 	else
