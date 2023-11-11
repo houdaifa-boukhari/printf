@@ -10,9 +10,9 @@
 int	ft_putstr(char format, char *str)
 {
 	int i;
-	
+
 	if (str)
-		i = ft_strlen(str);	
+		i = ft_strlen(str);
 	if (format == 'r')
 	{
 		i--;
