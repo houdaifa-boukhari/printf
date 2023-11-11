@@ -10,8 +10,9 @@
 int	ft_putstr(char format, char *str)
 {
 	int i;
-
-	i = ft_strlen(str);
+	
+	if (str)
+		i = ft_strlen(str);	
 	if (format == 'r')
 	{
 		i--;
@@ -22,6 +23,11 @@ int	ft_putstr(char format, char *str)
 		}
 	}
 	else if (format == 's')
-		write(1, str, i);
+	{
+		if (!str)
+			return (write(1, "(null)", 6));
+		else
+			return (write(1, str, ft_strlen(str)));
+	}
 	return (ft_strlen(str));
 }
