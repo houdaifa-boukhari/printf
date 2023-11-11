@@ -30,7 +30,7 @@ int ft_format(va_list args, const char format)
 		p = va_arg(args, void *);
 		if (p)
 			return (ft_putadress(p));
-		return (ft_putstr("0x0"));
+		return (ft_putstr('s', "0x0"));
 	}
 	else if (format == 'x')
 		return (ft_putnbr_hexa('x', va_arg(args, unsigned long)));
