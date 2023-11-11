@@ -1,31 +1,6 @@
 #include "main.h"
 
 /**
- * lenght - calcule lenght the number
- * @nb: number to calcul
- *
- * Return: len
- */
-
-int lenght(int nb)
-{
-	int i;
-
-	i = 1;
-	if (nb < 0)
-	{
-		nb = -nb;
-		i++;
-	}
-	while (nb >= 10)
-	{
-		nb /= 10;
-		i++;
-	}
-	return (i);
-}
-
-/**
  * ft_putnbr - print number
  * @nb: number to print
  *
@@ -34,17 +9,18 @@ int lenght(int nb)
 
 int	ft_putnbr(long nb)
 {
-	long n = nb;
 	char digite;
-
+	int i;
+	
+	i = 1;
 	if (nb < 0)
 	{
 		nb *= -1;
-		ft_putchar('-');
+		i += ft_putchar('-');
 	}
 	if (nb >= 10)
 	{
-		ft_putnbr(nb / 10);
+		i +=ft_putnbr(nb / 10);
 		ft_putnbr(nb % 10);
 	}
 	else
@@ -52,5 +28,5 @@ int	ft_putnbr(long nb)
 		digite = nb + 48;
 		ft_putchar(digite);
 	}
-	return (lenght(n));
+	return (i);
 }
