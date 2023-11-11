@@ -38,6 +38,8 @@ int	ft_putadress(void *adress)
 	base = "0123456789abcdef";
 	i = len(addres);
 	p = (char *)malloc(sizeof(char) * (i + 1));
+	if (!p)
+		return (-1);
 	write(1, "0x", 2);
 	p[i--] = '\0';
 	while (addres)
