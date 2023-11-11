@@ -17,5 +17,6 @@ int _printf(const char *format, ...);
 int ft_putbinary(unsigned int nb);
 int     ft_putadress(void *adress);
 int	ft_putoctal(long nb);
+char	*ft_strchr(const char *s, int c);
 
 #endif

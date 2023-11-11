@@ -7,7 +7,7 @@
  * Return: len to nb
  */
 
-int len(unsigned long long nb)
+int len(unsigned long nb)
 {
 	int i;
 
@@ -30,11 +30,11 @@ int len(unsigned long long nb)
 int	ft_putadress(void *adress)
 {
 	char *base;
-	unsigned long long addres;
+	unsigned long addres;
 	unsigned int i;
 	char *p;
 
-	addres = (unsigned long long)adress;
+	addres = (unsigned long)adress;
 	base = "0123456789abcdef";
 	i = len(addres);
 	p = (char *)malloc(sizeof(char) * (i + 1));
