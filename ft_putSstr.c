@@ -15,7 +15,7 @@ int	ft_putSstr(char *str)
 	i = 0;
 	j = 0;
 	if (!str)
-		return (-1);
+		return (ft_putstr('s', "(null)"));
 	while (str[i])
 	{
 		if (str[i] >= 32 && str[i] <= 126)
