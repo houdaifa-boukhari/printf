@@ -23,5 +23,5 @@ int	ft_putoctal(long nb)
 		digite = nb + 48;
 		ft_putchar(digite);
 	}
-	return (n);
+	return (i);
 }
