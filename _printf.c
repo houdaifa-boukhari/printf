@@ -46,7 +46,7 @@ int ft_format(va_list args, const char format)
 }
 
 /**
- * _printf - man printf
+ * _printf - man 3 printf
  * @format: the conversion specifier
  *
  * Return: a magic length

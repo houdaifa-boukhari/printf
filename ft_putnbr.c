@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * ft_putnbr - print number
- * @nb: number to print
+ * ft_putnbr - utilze printing integers
+ * @nb: the integer
  *
  * Return: len to number
  */
