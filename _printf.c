@@ -3,7 +3,7 @@
 
 /**
  * ft_format - print by format
- * @args: the entry pointer
+ * @args: the va_list entry pointer
  * @format: conversion specifier
  *
  * Return: the length of what we are going to print
