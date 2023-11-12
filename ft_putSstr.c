@@ -22,8 +22,8 @@ int	ft_putSstr(char *str)
 			j += ft_putchar(str[i]);
 		else if (str[i] < 32 || str[i] >= 127)
 		{
-			j += ft_putstr('s', "\\x0");
-			j += ft_putnbr_hexa('X', (long)str[i]);
+			j += ft_putstr('s', "\\x");
+			j += ft_putshexa((unsigned long)str[i]);
 		}
 		i++;
 	}
