@@ -42,7 +42,7 @@ int ft_format(va_list args, const char format)
 		return (ft_putnbr(va_arg(args, unsigned long)));
 	else if (format == 'r')
 		return (ft_putstr('r', va_arg(args, char *)));
-	return (-1);
+	return (0);
 }
 
 /**
