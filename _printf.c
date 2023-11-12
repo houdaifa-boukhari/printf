@@ -42,7 +42,7 @@ int ft_format(va_list args, const char format)
 		return (ft_putnbr(va_arg(args, unsigned long)));
 	else if (format == 'r')
 		return (ft_putstr('r', va_arg(args, char *)));
-	return (0);
+	return (-1);
 }
 
 /**
@@ -63,7 +63,7 @@ int _printf(const char *format, ...)
 	len = 0;
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
-	else if (format[0] == '%' && format[1] == ' ' && !format[2])
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
 	while (format[i])
 	{
