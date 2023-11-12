@@ -3,10 +3,10 @@
 
 /**
  * ft_format - print by format
- * @args: arguments passet by parametre
- * @format: style to print
+ * @args: the entry pointer
+ * @format: conversion specifier
  *
- * Return: len to print
+ * Return: the length of what we are going to print
  */
 
 int ft_format(va_list args, const char format)
@@ -46,10 +46,10 @@ int ft_format(va_list args, const char format)
 }
 
 /**
- * _printf - he work like printf
- * @format: style to print
+ * _printf - man printf
+ * @format: the conversion specifier
  *
- * Return: lenght to printf
+ * Return: a magic length
  */
 
 int _printf(const char *format, ...)
