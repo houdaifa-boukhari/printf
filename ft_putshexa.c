@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * ft_putadress - print adress to hexa
- * @adress: addres to print
+ * ft_putshexa  - print nb to hexa
+ * @nb: nb to print
  *
  * Return: len to print
  */
@@ -28,6 +28,6 @@ int	ft_putshexa(unsigned long nb)
 	i = 0;
 	while (p[i])
 		write(1, &p[i++], 1);
-	free (p);
+	free(p);
 	return (i);
 }

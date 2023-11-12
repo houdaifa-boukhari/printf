@@ -50,6 +50,6 @@ int	ft_putadress(void *adress)
 	i = 0;
 	while (p[i])
 		write(1, &p[i++], 1);
-	free (p);
+	free(p);
 	return (i + 2);
 }
