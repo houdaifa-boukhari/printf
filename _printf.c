@@ -33,13 +33,13 @@ int ft_format(va_list args, const char format)
 		return (ft_putstr('s', "(nil)"));
 	}
 	else if (format == 'x')
-		return (ft_putnbr_hexa('x', va_arg(args, unsigned long)));
+		return (ft_putnbr_hexa('x', va_arg(args, unsigned int)));
 	else if (format == 'X')
-		return (ft_putnbr_hexa('X', va_arg(args, unsigned long)));
+		return (ft_putnbr_hexa('X', va_arg(args, unsigned int)));
 	else if (format == 'o')
-		return (ft_putoctal(va_arg(args, long)));
+		return (ft_putoctal(va_arg(args, unsigned int)));
 	else if (format == 'u')
-		return (ft_putnbr(va_arg(args, unsigned long)));
+		return (ft_putnbr(va_arg(args, unsigned int)));
 	else if (format == 'r')
 		return (ft_putstr('r', va_arg(args, char *)));
 	return (-1);
