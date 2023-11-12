@@ -66,7 +66,7 @@ int _printf(const char *format, ...)
 	else if (strcmp(format, "% ") == 0)
 		return (-1);
 	else if (!format)
-		return (-1);
+		return (0);
 	while (format[i])
 	{
 		if (format[i] == '%' && ft_strchr("csdibSpXxoiur%", format[i + 1]))
