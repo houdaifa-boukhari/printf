@@ -61,7 +61,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	i = 0;
 	len = 0;
-	if (!format || format[0] == '%' && !format[1])
+	if (!format ||(format[0] == '%' && !format[1]))
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
