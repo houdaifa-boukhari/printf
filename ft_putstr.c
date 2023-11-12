@@ -18,7 +18,7 @@ int	ft_putstr(char format, char *str)
 		i--;
 		while (i >= 0)
 		{
-			ft_putchar(str[i - 1]);
+			ft_putchar(str[i]);
 			i--;
 		}
 	}
