@@ -64,7 +64,7 @@ int _printf(const char *format, ...)
 	len = 0;
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
+	else if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
 	while (format[i] != '\0' && i < ft_strlen(format))
 	{
