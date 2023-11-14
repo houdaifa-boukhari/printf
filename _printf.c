@@ -5,11 +5,12 @@
  * ft_format - print by format
  * @args: the va_list entry pointer
  * @format: conversion specifier
+ * @flags: the flags
  *
  * Return: the length of what we are going to print
  */
 
-int ft_format(va_list args, const char format)
+int ft_format(va_list args, const char format, char flags)
 {
 	void *p;
 
@@ -20,7 +21,7 @@ int ft_format(va_list args, const char format)
 	else if (format == '%')
 		return (ft_putchar('%'));
 	else if (format == 'd' || format == 'i')
-		return (ft_putnbr(va_arg(args, int)));
+		return (ft_putnbr(va_arg(args, int), flags));
 	else if (format == 'b')
 		return (ft_putbinary(va_arg(args, unsigned int)));
 	else if (format == 'S')
@@ -33,13 +34,13 @@ int ft_format(va_list args, const char format)
 		return (ft_putstr('s', "(nil)"));
 	}
 	else if (format == 'x')
-		return (ft_putnbr_hexa('x', va_arg(args, unsigned int)));
+		return (ft_putnbr_hexa('x', va_arg(args, unsigned int), flags));
 	else if (format == 'X')
-		return (ft_putnbr_hexa('X', va_arg(args, unsigned int)));
+		return (ft_putnbr_hexa('X', va_arg(args, unsigned int), flags));
 	else if (format == 'o')
-		return (ft_putoctal(va_arg(args, unsigned int)));
+		return (ft_putoctal(va_arg(args, unsigned int), flags));
 	else if (format == 'u')
-		return (ft_putnbr(va_arg(args, unsigned int)));
+		return (ft_putnbr(va_arg(args, unsigned int), flags));
 	else if (format == 'r')
 		return (ft_putstr('r', va_arg(args, char *)));
 	return (-1);
@@ -57,6 +58,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i;
 	int len;
+	char flags = '\0';
 
 	va_start(args, format);
 	i = 0;
@@ -67,9 +69,18 @@ int _printf(const char *format, ...)
 		return (-1);
 	while (format[i])
 	{
+		if (format[i] == '%' && format[i + 1] &&
+				ft_strchr("csdibSpXxoiur%", format[i + 2]))
+		{
+			if (format[i + 1] == '+' || format[i + 1] == ' ' || format[i + 1] == '#')
+			{
+				len += ft_format(args, format[i + 2], ft_flags(format[i + 1]));
+				i += 3;
+			}
+		}
 		if (format[i] == '%' && ft_strchr("csdibSpXxoiur%", format[i + 1]))
 		{
-			len += ft_format(args, format[i + 1]);
+			len += ft_format(args, format[i + 1], flags);
 			i++;
 		}
 		else
