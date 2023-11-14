@@ -68,7 +68,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	while (format[i] != '\0' && i < ft_strlen(format))
 	{
-		if (format[i] == '%' && format[i + 1] && format[i + 2] &&
+		/*if (format[i] == '%' && format[i + 1] && format[i + 2] &&
 				ft_strchr("Xxdoiu%", format[i + 2]))
 		{
 			while (format[i + 1] == '+' || format[i + 1] == ' ' || format[i + 1] == '#')
@@ -77,8 +77,8 @@ int _printf(const char *format, ...)
 				i++;
 			}
 			i += 1;
-		}
-		else if (format[i] == '%' && ft_strchr("csdbSpXxoiur%", format[i + 1]))
+		}*/
+		if (format[i] == '%' && ft_strchr("csdbSpXxoiur%", format[i + 1]))
 		{
 			len += ft_format(args, format[i + 1], ft_flags(format[i + 1]));
 			i++;
