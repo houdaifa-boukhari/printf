@@ -74,10 +74,10 @@ int _printf(const char *format, ...)
 			while (format[i + 1] == '+' || format[i + 1] == ' ' || format[i + 1] == '#')
 			{
 				len += ft_format(args, format[i + 2], ft_flags(format[i + 1]));
-				i++;
+				i += 2;
 			}
 		}
-		if (format[i] == '%' && ft_strchr("csdbSpXxoiur%", format[i + 1]))
+		else if (format[i] == '%' && ft_strchr("csdbSpXxoiur%", format[i + 1]))
 		{
 			len += ft_format(args, format[i + 1], ft_flags(format[i + 1]));
 			i++;
