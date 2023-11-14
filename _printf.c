@@ -84,7 +84,7 @@ int _printf(const char *format, ...)
 			i++;
 		}
 		else
-			ft_putchar(format[i]);
+			len += ft_putchar(format[i]);
 		i++;
 	}
 	va_end(args);
