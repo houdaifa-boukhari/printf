@@ -27,11 +27,6 @@ int	ft_putnbr_hexa(char format, unsigned long nb, char flags)
 		i += ft_putstr('s', "0x");
 		flags = '%';
 	}
-	else if (flags == ' ')
-	{
-		i += ft_putchar(' ');
-		flags = '%';
-	}
 	if (nb >= 16)
 	{
 		i += ft_putnbr_hexa(format, nb / 16, flags);

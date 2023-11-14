@@ -58,7 +58,6 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i;
 	int len;
-	char flags = '\0';
 
 	va_start(args, format);
 	i = 0;
@@ -67,10 +66,10 @@ int _printf(const char *format, ...)
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
-	while (format[i])
+	while (format[i] != '\0' && i < ft_strlen(format))
 	{
-		if (format[i] == '%' && format[i + 1] &&
-				ft_strchr("csdibSpXxoiur%", format[i + 2]))
+		if (format[i] == '%' && format[i + 1] && format[i + 2] &&
+				ft_strchr("Xxdoiu%", format[i + 2]))
 		{
 			if (format[i + 1] == '+' || format[i + 1] == ' ' || format[i + 1] == '#')
 			{
@@ -78,13 +77,13 @@ int _printf(const char *format, ...)
 				i += 3;
 			}
 		}
-		if (format[i] == '%' && ft_strchr("csdibSpXxoiur%", format[i + 1]))
+		else if (format[i] == '%' && ft_strchr("csdbSpXxoiur%", format[i + 1]))
 		{
-			len += ft_format(args, format[i + 1], flags);
+			len += ft_format(args, format[i + 1], ft_flags(format[i + 1]));
 			i++;
 		}
 		else
-			len += ft_putchar(format[i]);
+			ft_putchar(format[i]);
 		i++;
 	}
 	va_end(args);

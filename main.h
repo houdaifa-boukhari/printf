@@ -11,7 +11,7 @@
 int	ft_putchar(char c);
 int	ft_putstr(char format, char *str);
 int	ft_putSstr(char *str);
-size_t	ft_strlen(const char *str);
+int	ft_strlen(const char *str);
 int    ft_putnbr(long nb, char flags);
 int    ft_putnbr_hexa(char format, unsigned long nb, char flags);
 int _printf(const char *format, ...);

@@ -15,7 +15,7 @@ int	ft_putoctal(long nb, char flags)
 	i = 1;
 	if (flags == '#')
 	{
-		ft_putchar('0');
+		i += ft_putchar('0');
 		flags = '%';
 	}
 	if (nb >= 8)
