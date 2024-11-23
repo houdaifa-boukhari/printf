@@ -35,10 +35,11 @@ int main(void)
     printf("Len:[%d]\n", len);
     ft_printf("%s\n", str);
     printf("%s\n", str);
-
-    printf("\001\002\007\v\010\f\r\n");
-    i = ft_printf("%p p %p %p", (void *)LONG_MAX + 423856, (void *)0, (void *)INT_MAX);
-    ft_printf("\n%d", i);
-   
+    len = ft_printf("%");
+    len2 = printf("%");
+    printf("len[%d] == len[%d]\n", len, len2);
+    len = ft_printf("%m\n");
+    len2 = printf("%m\n");
+    printf("len[%d] == len[%d]\n", len, len2);
     return (0);
 }
